@@ -87,6 +87,10 @@ function loaders() {
   const loaders = {
     rules: [
       {
+        test: /\.node$/,
+        use: "node-loader"
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [babelLoader()]
@@ -176,12 +180,7 @@ module.exports = ignoreWarmupPlugin({
   stats: ENABLE_STATS ? "normal" : "errors-only",
   devtool: ENABLE_SOURCE_MAPS ? "source-map" : false,
   // Exclude "aws-sdk" since it's a built-in package
-  externals: [
-    "aws-sdk",
-    "knex",
-    "sharp",
-    { "/opt/twistlock": "commonjs /opt/twistlock" }
-  ],
+  externals: ["aws-sdk", "knex", "sharp"],
   mode: isLocal ? "development" : "production",
   performance: {
     // Turn off size warnings for entry points

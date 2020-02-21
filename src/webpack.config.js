@@ -176,7 +176,7 @@ module.exports = ignoreWarmupPlugin({
   stats: ENABLE_STATS ? "normal" : "errors-only",
   devtool: ENABLE_SOURCE_MAPS ? "source-map" : false,
   // Exclude "aws-sdk" since it's a built-in package
-  externals: ["aws-sdk", "knex", "sharp"],
+  externals: ["aws-sdk", "knex", "sharp", "twistlock"],
   mode: isLocal ? "development" : "production",
   performance: {
     // Turn off size warnings for entry points

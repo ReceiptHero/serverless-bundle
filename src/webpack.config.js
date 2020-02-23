@@ -88,7 +88,7 @@ function loaders() {
     rules: [
       {
         test: /\.node$/,
-        use: "node-loader"
+        use: "native-ext-loader"
       },
       {
         test: /\.js$/,
